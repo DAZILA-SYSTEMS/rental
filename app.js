@@ -55,7 +55,10 @@ app.use("/staff", require("./routes/staff"));
 app.use("/mode", require("./routes/mode"));
 
 // setting up online pay
-app.use("/online-pay", require("./routes/mpesa/online"));
+app.use("/online", require("./routes/mpesa/online"));
+
+// setting up online pay
+app.use("/online-pay", require("./routes/mpesa/onlinePayments"));
 
 // initiating online pay by tenants
 app.use("/client-pay", require("./routes/mpesa/mpesapay"));
@@ -126,7 +129,7 @@ app.use("/pay", require("./routes/mpesaSub"));
 //manual activations by system admin
 app.use("/pro", require("./routes/pro"));
 
-const PORT = process.env.PORT || 7000;
+const PORT = process.env.PORT || 6000;
 
 //app.listen(PORT, console.log(`Server started on port ${PORT}`));
 
